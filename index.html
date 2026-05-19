@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Modal – CSS Animação</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 class="page-title">Galeria Modal</h1>
+    <p class="page-subtitle">CSS: layout de alvo + transição + grade</p>
+
+    <div class="demo-area">
+        <div class="example">
+            <h2 class="example-title">Clique nas imagens para abrir o lightbox</h2>
+
+            <div class="gallery-grid">
+                <a href="#img-1" class="thumbnail">
+                    <img src="img/photo-1.png.jpg" alt="Imagem 1">
+                </a>
+                <a href="#img-2" class="thumbnail">
+                    <img src="img/photo-2.png.jpg" alt="Imagem 2">
+                </a>
+                <a href="#img-3" class="thumbnail">
+                    <img src="img/photo-3.png.jpg" alt="Imagem 3">
+                </a>
+                <a href="#img-4" class="thumbnail">
+                    <img src="img/photo-4.png.jpg" alt="Imagem 4">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="code-section">
+        <div class="code-label">CSS</div>
+        <pre class="code-block">/*Lightbox hidden by default */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    opacity: 1;
+    visibility: visible;
+}
+/* Image scales in */
+.lightbox:target img {
+    transform: scale(1);
+}
+/* Navigation arrows*/
+.lb-prev, .lb-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+}</pre>
+    </div>
+
+    <!-- Img 1 -->
+    <div class="lightbox" id="img-1">
+        <a href="#" class="lb-close">&times;</a>
+        <a href="#img-4" class="lb-arrow lb-prev">&#10094;</a>
+        <div class="lb-content">
+            <img src="img/photo-1.png.jpg" alt="Imagem 1">
+            <span class="lb-counter">1 / 4</span>
+        </div>
+        <a href="#img-2" class="lb-arrow lb-next">&#10095;</a>
+    </div>
+
+    <!-- Img 2 -->
+    <div class="lightbox" id="img-2">
+        <a href="#" class="lb-close">&times;</a>
+        <a href="#img-1" class="lb-arrow lb-prev">&#10094;</a>
+        <div class="lb-content">
+            <img src="img/photo-2.png.jpg" alt="Imagem 2">
+            <span class="lb-counter">2 / 4</span>
+        </div>
+        <a href="#img-3" class="lb-arrow lb-next">&#10095;</a>
+    </div>
+
+    <!-- Img 3 -->
+    <div class="lightbox" id="img-3">
+        <a href="#" class="lb-close">&times;</a>
+        <a href="#img-2" class="lb-arrow lb-prev">&#10094;</a>
+        <div class="lb-content">
+            <img src="img/photo-3.png.jpg" alt="Imagem 3">
+            <span class="lb-counter">3 / 4</span>
+        </div>
+        <a href="#img-4" class="lb-arrow lb-next">&#10095;</a>
+    </div>
+
+    <!-- Img 4 -->
+    <div class="lightbox" id="img-4">
+        <a href="#" class="lb-close">&times;</a>
+        <a href="#img-3" class="lb-arrow lb-prev">&#10094;</a>
+        <div class="lb-content">
+            <img src="img/photo-4.png.jpg" alt="Imagem 4">
+            <span class="lb-counter">4 / 4</span>
+        </div>
+        <a href="#img-1" class="lb-arrow lb-next">&#10095;</a>
+    </div>
+</body>
+</html>
